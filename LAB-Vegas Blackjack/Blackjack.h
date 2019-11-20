@@ -1,11 +1,6 @@
 #ifndef BLACKJACK_H
 #define BLACKJACK_H
 
-#include <stdio.h>      /* printf, scanf, puts, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
-#include <iostream>
-#include <string>
 #include "Hand.h"
 #include <ctime>
 #include <cstdlib>
@@ -24,19 +19,18 @@ class Blackjack
 //  Member function to obtain the player's choice.
     Hit_or_Stand queryPlayer(); //  Write an implementation of this function.  It must
                                 //   keep querying the player until a valid choice is
-                                //   entered, then return that choice as a Hit_or_Stand. 
-    
+                                //   entered, then return that choice as a Hit_or_Stand.
+    bool queryDoubledown(); //Queries for double down
 
   public:
 //   Constructor.  I have written this implementation for you.
     Blackjack(double money)
      :playerMoney(money), playerHand("Player"), dealerHand("Dealer")
-    {}
-
+    { }
 
 //   Member function 'play' should play a round of Blackjack according to the rules
-//    of the game, and return the updated playerMoney. 
-    double play(double bet); // Write an implementation of this function. 
+//    of the game, and return the updated playerMoney.
+    double play(double bet); // Write an implementation of this function.
 };
 
 #endif
